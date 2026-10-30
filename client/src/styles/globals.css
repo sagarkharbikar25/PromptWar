@@ -1,0 +1,81 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--powder);
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Display Type: Archivo Variable wdth 125 wght 900 */
+  h1, h2, h3, .font-slab {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 125, 'wght' 900;
+    font-stretch: 125%;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.88;
+  }
+
+  /* Form Elements: high-contrast dark steel inputs with powder text */
+  input, textarea, select {
+    background-color: var(--steel) !important;
+    color: var(--powder) !important;
+    border: 1px solid var(--line-on-dark);
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--cyan) !important;
+    outline: none !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(235, 241, 245, 0.45) !important;
+  }
+}
+
+/* Linear Marquee Loop */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Invert Card on Hover (180ms flat color flip) */
+.slab-card {
+  background-color: var(--surface);
+  color: var(--powder);
+  border: 1px solid var(--line-on-dark);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.slab-card:hover {
+  background-color: var(--cyan);
+  color: #010B13;
+  border-color: var(--cyan);
+}
+
+.slab-card:hover .invert-child {
+  color: #010B13 !important;
+  border-color: rgba(1, 11, 19, 0.25) !important;
+}
+
+/* Slab entrance clip-path */
+.slab-reveal {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.5s var(--ease);
+}

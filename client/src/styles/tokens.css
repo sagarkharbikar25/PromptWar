@@ -1,0 +1,14 @@
+:root {
+  --bg:           #010B13;   /* Rich Black */
+  --cyan:         #00E5FF;   /* Cyan Aash */
+  --powder:       #EBF1F5;   /* Powder White */
+  --ink:          #0A111C;   /* Deep Indigo-Navy text for Powder White slab */
+  --steel:        #111111;   /* Steel Black */
+  --surface:      #07151F;   /* Container dark */
+  
+  --line-on-dark:  rgba(235, 241, 245, 0.15);
+  --line-on-cyan:  rgba(1, 11, 19, 0.2);
+  --line-on-white: rgba(10, 17, 28, 0.15);
+  
+  --ease:         cubic-bezier(0.22, 1, 0.36, 1);
+}
